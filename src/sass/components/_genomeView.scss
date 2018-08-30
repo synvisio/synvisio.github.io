@@ -1,0 +1,68 @@
+@import "~rc-slider/assets/index";
+.genomeViewRoot {
+    position: relative;
+    .genomeViewSVG {
+        display: block;
+        margin: 0 auto;
+        .markersText {
+            fill: white;
+            font-weight: bold;
+            font-size: 1.0em;
+        }
+        .chromosomeMarkers,
+        .markersText {
+            cursor: pointer;
+        }
+        .chromosomeMarkers {
+            stroke-linecap: round;
+        }
+        &.tracks-visible {
+            .chromosomeMarkers {
+                stroke-linecap: unset;
+            }
+        }
+        .link {
+            fill: none;
+            stroke-opacity: .5;
+            pointer-events: none;
+            &.hidden-alignment-link {
+                stroke-opacity: 0;
+            }
+        }
+        .link-polygon {
+            stroke: none;
+            fill-opacity: .6;
+            pointer-events: none;
+            &.hidden-alignment-link {
+                fill-opacity: 0;
+            }
+        }
+        line.track-trails {
+            stroke-width: 0.5px;
+            stroke: #525765;
+        }
+        path.track-line-path {
+            stroke: #238099;
+            stroke-width: 2px;
+            fill: none;
+        }
+        &.chrom-mode {
+            border-radius: 10px;
+            background: #1a1c22;
+            .link {
+                cursor: pointer;
+                pointer-events: all;
+                &:hover {
+                    stroke-opacity: .9;
+                }
+            }
+            .link-polygon {
+                cursor: pointer;
+                pointer-events: all;
+                &:hover {
+                    fill-opacity: .9;
+                }
+            }
+        }
+    }
+}
